@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar-container">
-    <b-navbar>
+    <b-navbar class="navbar is-black">
       <template #start>
-        <b-navbar-item>
+        <b-navbar-item class="start">
           JULIAN WAN
         </b-navbar-item>
       </template>
@@ -13,7 +13,7 @@
         <b-navbar-item>
           PROJECTS
         </b-navbar-item>
-        <b-navbar-item>
+        <b-navbar-item class="end">
           CONTACT
         </b-navbar-item>    
       </template>
@@ -34,10 +34,14 @@ export default class NavBar extends Vue{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 30px;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 20px;
+}
+
+.start{
+  padding-left: 40px;
+}
+
+.end{
+  padding-right: 40px;
 }
 
 </style>
