@@ -1,17 +1,19 @@
 <template>
   <div class="main-page-container">
-    <div class="nav-bar-container">
-      This is where the nav bar resides
-    </div>
+    <NavBar/>
     <div class="text-picture-container">
-      <div class="text-description-container">
-        <h1>This is the main Header</h1>
-        <h2>This is the second main header</h2>
-        <h3>These are texts</h3>
-        <h3>These are more texts</h3>
-      </div>
       <div class="picture-container">
-        <img src="../assets/kyriakos-grizzly-flames.jpeg" alt="img here">
+        <div class="text-description-container">
+          <h1 class="text-header">
+            Julian Wan
+          </h1>
+          <div class="descriptions">
+            <h2>Software Developer</h2>
+            <h3>Mechanical Engineering Grad</h3>
+            <h3>Looking ahead for more</h3>
+          </div>
+        </div>
+        <img src="../assets/porsche-widescreen.jpeg" alt="img here">
       </div>
     </div>
   </div>
@@ -19,8 +21,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import NavBar from './NavBar.vue';
 
-@Component({})
+@Component({
+  components: {
+    NavBar
+  },
+})
 export default class MainPage extends Vue {
 }
 </script>
@@ -31,22 +38,38 @@ export default class MainPage extends Vue {
   display: flex;
   flex-direction: column;
 }
-.nav-bar-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+
 .text-picture-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-between  ;
+  justify-content: space-between;
 }
 .text-description-container {
-  display: flex;
+  position: absolute;
   flex-direction: column;
+  padding-left: 60px;
 }
+
+.text-header{
+  font-size: 150px;
+  margin-top: 20px;
+  color: rgb(243, 240, 231);
+}
+
+.descriptions{
+  font-size: 40px;
+  color: rgb(216, 208, 208);
+}
+
+.text-second-header{
+  font-size: 40px;
+  position: absolute;
+  margin-top: 280px;
+  padding-left: 40px;
+  color: rgb(211, 184, 184);
+}
+
 .picture-container {
-  display: flex;
+  display: block;
 }
 </style>
