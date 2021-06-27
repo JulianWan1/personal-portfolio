@@ -7,7 +7,7 @@
         </b-navbar-item>
       </template>
       <template #end>
-        <b-navbar-item>
+        <b-navbar-item @click="emitAboutSection">
           ABOUT
         </b-navbar-item>
         <b-navbar-item>
@@ -26,6 +26,10 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class NavBar extends Vue{
+
+  emitAboutSection(){
+    this.$emit('handleAboutSection')
+  }
 }
 </script>
 
