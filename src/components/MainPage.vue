@@ -1,6 +1,8 @@
 <template>
   <div class="main-page-container">
-    <NavBar/>
+    <NavBar 
+      @handleAboutSection="redirectToAboutSection"
+    />
     <div class="text-picture-container">
       <div class="picture-container">
         <div class="text-description-container">
@@ -16,19 +18,29 @@
         <img src="../assets/porsche-widescreen.jpeg" alt="img here">
       </div>
     </div>
+    <div id="about-section">
+      <AboutSection/>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import NavBar from './NavBar.vue';
+import AboutSection from './AboutSection.vue';
 
 @Component({
   components: {
-    NavBar
+    NavBar,
+    AboutSection
   },
 })
 export default class MainPage extends Vue {
+
+  redirectToAboutSection(){
+    const aboutElement = document.getElementById('about-section');
+    aboutElement?.scrollIntoView({ behavior:'smooth'});
+  }
 }
 </script>
 
@@ -59,14 +71,6 @@ export default class MainPage extends Vue {
 .descriptions{
   font-size: 40px;
   color: rgb(216, 208, 208);
-}
-
-.text-second-header{
-  font-size: 40px;
-  position: absolute;
-  margin-top: 280px;
-  padding-left: 40px;
-  color: rgb(211, 184, 184);
 }
 
 .picture-container {
