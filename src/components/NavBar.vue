@@ -10,10 +10,10 @@
         <b-navbar-item @click="emitAboutSection">
           ABOUT
         </b-navbar-item>
-        <b-navbar-item>
+        <b-navbar-item @click="emitProjectSection">
           PROJECTS
         </b-navbar-item>
-        <b-navbar-item class="end">
+        <b-navbar-item class="end" @click="emitContactSection">
           CONTACT
         </b-navbar-item>    
       </template>
@@ -34,6 +34,15 @@ export default class NavBar extends Vue{
   emitAboutSection(){
     this.$emit('handleAboutSection')
   }
+
+  emitProjectSection(){
+    this.$emit('handleProjectSection')
+  }
+
+  emitContactSection(){
+    this.$emit('handleContactSection')
+  }
+
 }
 </script>
 
