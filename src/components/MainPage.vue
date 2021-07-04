@@ -1,9 +1,12 @@
 <template>
   <div class="main-page-container">
     <NavBar 
+      @handleMainPage="redirectToMainPage"
       @handleAboutSection="redirectToAboutSection"
+      @handleProjectSection="redirectToProjectSection"
+      @handleContactSection="redirectToContacSection"
     />
-    <div class="text-picture-container">
+    <div class="text-picture-container" id="main-page">
       <div class="picture-container">
         <div class="text-description-container">
           <h1 class="text-header">
@@ -15,12 +18,14 @@
             <h3>Looking ahead for more</h3>
           </div>
         </div>
-        <img src="../assets/porsche-widescreen.jpeg" alt="img here">
+        <img src="../assets/Orange_Mclaren.jpg" alt="img here">
       </div>
     </div>
     <div id="about-section">
       <AboutSection/>
     </div>
+    <div id="project-section"></div>
+    <div id="contact-section"></div>
   </div>
 </template>
 
@@ -37,10 +42,26 @@ import AboutSection from './AboutSection.vue';
 })
 export default class MainPage extends Vue {
 
+  redirectToMainPage(){
+    const mainPageElement = document.getElementById('main-page');
+    mainPageElement?.scrollIntoView({ behavior:'smooth'});
+  }
+
   redirectToAboutSection(){
     const aboutElement = document.getElementById('about-section');
     aboutElement?.scrollIntoView({ behavior:'smooth'});
   }
+
+  redirectToProjectSection(){
+    const projectElement = document.getElementById('project-section');
+    projectElement?.scrollIntoView({behavior:'smooth'});
+  }
+
+  redirectToContacSection(){
+    const contactElement = document.getElementById('contact-section');
+    contactElement?.scrollIntoView({behavior:'smooth'});
+  }
+
 }
 </script>
 
