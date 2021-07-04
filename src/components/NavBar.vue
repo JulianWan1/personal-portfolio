@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
+// BRUH PLEASE WORK
 @Component({})
 export default class NavBar extends Vue{
 
