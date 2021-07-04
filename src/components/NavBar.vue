@@ -26,7 +26,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class NavBar extends Vue{
-
+//hello
   emitMainPage(){
     this.$emit('handleMainPage')
   }
