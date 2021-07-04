@@ -27,7 +27,9 @@
     <div id="project-section">
       <ProjectsSection/>
     </div>
-    <div id="contact-section"></div>
+    <div id="contact-section">
+      <ContactSection/>
+    </div>
   </div>
 </template>
 
@@ -36,12 +38,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import NavBar from './NavBar.vue';
 import AboutSection from './AboutSection.vue';
 import ProjectsSection from './ProjectsSection.vue';
+import ContactSection from './ContactSection.vue';
 
 @Component({
   components: {
     NavBar,
     AboutSection,
-    ProjectsSection
+    ProjectsSection,
+    ContactSection
   },
 })
 export default class MainPage extends Vue {
