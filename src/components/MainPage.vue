@@ -6,8 +6,8 @@
       @handleProjectSection="redirectToProjectSection"
       @handleContactSection="redirectToContacSection"
     />
-    <div class="text-picture-container" id="main-page">
-      <div class="picture-container">
+    <div class="text-picture-container" >
+      <div class="picture-container" id="main-page">
         <div class="text-description-container">
           <h1 class="text-header">
             Julian Wan
@@ -24,7 +24,9 @@
     <div id="about-section">
       <AboutSection/>
     </div>
-    <div id="project-section"></div>
+    <div id="project-section">
+      <ProjectsSection/>
+    </div>
     <div id="contact-section"></div>
   </div>
 </template>
@@ -33,11 +35,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import NavBar from './NavBar.vue';
 import AboutSection from './AboutSection.vue';
+import ProjectsSection from './ProjectsSection.vue';
 
 @Component({
   components: {
     NavBar,
-    AboutSection
+    AboutSection,
+    ProjectsSection
   },
 })
 export default class MainPage extends Vue {
@@ -70,6 +74,7 @@ export default class MainPage extends Vue {
 .main-page-container {
   display: flex;
   flex-direction: column;
+  background: black;
 }
 
 .text-picture-container{
