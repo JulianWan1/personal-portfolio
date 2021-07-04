@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar-container">
-    <b-navbar class="navbar is-black">
+    <b-navbar class="navbar is-black is-fixed-top">
       <template #start>
-        <b-navbar-item class="start">
+        <b-navbar-item class="start" @click="emitMainPage">
           JULIAN WAN
         </b-navbar-item>
       </template>
@@ -26,6 +26,10 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class NavBar extends Vue{
+
+  emitMainPage(){
+    this.$emit('handleMainPage')
+  }
 
   emitAboutSection(){
     this.$emit('handleAboutSection')
