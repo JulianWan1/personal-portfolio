@@ -1,0 +1,34 @@
+// Mixins for ExperienceSection
+// Contains all of the media queries for all classes involved
+
+@mixin experienceSectionContainerReactive(){
+	@media(max-height: 400px) {
+		height: 400px;
+	}
+}
+
+@mixin experienceTechStackHeaderReactive(){
+	@media(max-width: 650px){
+		margin-top: 2vh;
+	}
+}
+
+@mixin experienceTechStackContainer(){
+	@media(max-width: 650px){
+		margin-top: 8vh;
+	}
+}
+
+@mixin experienceTechIconCard(){
+	@media(max-width: 650px){
+		height: 10vh;
+    width: 10vh;
+	}
+}
+
+@mixin experienceTechIconImage(){
+	@media(max-width: 650px){
+		height: 8vh;
+    width: 8vh;
+	}
+}
