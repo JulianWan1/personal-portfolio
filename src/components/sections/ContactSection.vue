@@ -91,7 +91,7 @@ export default class ContactSection extends Vue{
   &__icon-image{
     @include contactIconImageReactive();
     &:hover{
-      opacity: 50%;
+      opacity: 0.5;
       transition: opacity $transition-time-links;
     }
   }
