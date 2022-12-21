@@ -1,33 +1,20 @@
 <template>
   <div class="main-page-container">
-    <NavBar 
-      @handleMainPage="redirectToMainPage"
-      @handleAboutSection="redirectToAboutSection"
-      @handleProjectSection="redirectToProjectSection"
-      @handleContactSection="redirectToContacSection"
-    />
-    <div class="text-picture-container" >
-      <div class="picture-container" id="main-page">
-        <div class="text-description-container">
-          <h1 class="text-header">
-            Julian Wan
-          </h1>
-          <div class="descriptions">
-            <h2>Software Developer</h2>
-            <h3>Mechanical Engineering Grad</h3>
-            <h3>Looking ahead for more</h3>
-          </div>
-        </div>
-        <img src="../assets/Orange_Mclaren.jpg" alt="img here">
-      </div>
+    <div class="navbar">
+      <NavBar 
+      @handleSection="redirectToSection"
+      />
     </div>
-    <div id="about-section">
-      <AboutSection/>
+    <div id="main-section">
+      <MainSection/>
+    </div>
+    <div id="experience-section" class="alternate">
+      <ExperienceSection/>
     </div>
     <div id="project-section">
       <ProjectsSection/>
     </div>
-    <div id="contact-section">
+    <div id="contact-section" class="alternate">
       <ContactSection/>
     </div>
   </div>
@@ -35,75 +22,96 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import NavBar from './NavBar.vue';
-import AboutSection from './AboutSection.vue';
-import ProjectsSection from './ProjectsSection.vue';
-import ContactSection from './ContactSection.vue';
+import NavBar from './navigation/NavBar.vue';
+import MainSection from './sections/MainSection.vue';
+import ExperienceSection from './sections/ExperienceSection.vue';
+import ProjectsSection from './sections/ProjectsSection.vue';
+import ContactSection from './sections/ContactSection.vue';
 
 @Component({
   components: {
     NavBar,
-    AboutSection,
+    MainSection,
+    ExperienceSection,
     ProjectsSection,
     ContactSection
   },
 })
 export default class MainPage extends Vue {
 
-  redirectToMainPage(){
-    const mainPageElement = document.getElementById('main-page');
-    mainPageElement?.scrollIntoView({ behavior:'smooth'});
+  // Set to ensure that the page stops slightly more above (using -40 offset) when redirecting
+  redirectToSection(page:string){
+
+    const id = page;
+    const yOffset = -40; 
+    const pageSection = document.getElementById(id);
+    const y = pageSection!.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({top: y, behavior: 'smooth'});
+
   }
 
-  redirectToAboutSection(){
-    const aboutElement = document.getElementById('about-section');
-    aboutElement?.scrollIntoView({ behavior:'smooth'});
+  mounted(){
+    // Run this to allow animation to work whenever a page (and whichever page) is loaded for the first time
+    this.sectionAppearAnimation();
+
+    window.addEventListener('scroll', () =>
+      this.sectionAppearAnimation()
+    );
+
   }
 
-  redirectToProjectSection(){
-    const projectElement = document.getElementById('project-section');
-    projectElement?.scrollIntoView({behavior:'smooth'});
-  }
-
-  redirectToContacSection(){
-    const contactElement = document.getElementById('contact-section');
-    contactElement?.scrollIntoView({behavior:'smooth'});
+  // For all elements which id's ends with "-section",
+  // get each of the element's position information relative to the viewport
+  // will use the top and the bottom positions relative to viewport
+  // if the relative top position of the element to the viewport is less than that of the viewport's (window's) height (in px)
+  // and if the relative bottom position of the element to the viewport is more than 40px of the viewport(to account for y-offset at line 46),
+  // append the new class to the id to allow the transition to work (initially opacity is 0 and the position of content is 3vw from the left)
+  sectionAppearAnimation(){
+    let elements = document.querySelectorAll('[id$="-section"]');
+    elements.forEach(function(element) {
+      let rect = element.getBoundingClientRect();
+      console.log(rect.top)
+      console.log(window.innerHeight)
+      console.log(rect.bottom)
+      if (rect.top < window.innerHeight && rect.bottom > 40) {
+        element.classList.add('viewed');
+      }
+    });
   }
 
 }
+
+
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 .main-page-container {
   display: flex;
   flex-direction: column;
-  background: black;
+  background-color: $background-color;
 }
 
-.text-picture-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.text-description-container {
-  position: absolute;
-  flex-direction: column;
-  padding-left: 60px;
+.navbar{
+  background-color: $background-color;
+  min-height: 50px;
 }
 
-.text-header{
-  font-size: 150px;
-  margin-top: 20px;
-  color: rgb(243, 240, 231);
+[id$="-section"] {
+  opacity: 0;
+  translate: -3vw;
+  transition: all 2.5s;
 }
 
-.descriptions{
-  font-size: 40px;
-  color: rgb(216, 208, 208);
+// set alternate starting position of the contents
+[id$="-section"].alternate {
+  translate: 3vw;
 }
 
-.picture-container {
-  display: block;
+[id$="-section"].viewed {
+  opacity: 1;
+  translate: 0vw;
 }
+
 </style>
