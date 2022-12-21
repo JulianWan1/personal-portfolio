@@ -71,9 +71,6 @@ export default class MainPage extends Vue {
     let elements = document.querySelectorAll('[id$="-section"]');
     elements.forEach(function(element) {
       let rect = element.getBoundingClientRect();
-      console.log(rect.top)
-      console.log(window.innerHeight)
-      console.log(rect.bottom)
       if (rect.top < window.innerHeight && rect.bottom > 40) {
         element.classList.add('viewed');
       }
