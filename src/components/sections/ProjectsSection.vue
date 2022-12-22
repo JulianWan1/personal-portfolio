@@ -22,7 +22,7 @@
           Docker
         </div>
         <div class="project__link">
-          <a href="https://www.juliancoinapp.com" target="_blank" rel="noopener noreferrer">Visit Project</a>
+          <a href="https://juliancoinapp.com" target="_blank" rel="noopener noreferrer">Visit Project</a>
         </div>
       </div>
     </div>
