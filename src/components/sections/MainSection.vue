@@ -6,13 +6,13 @@
 			</div>
 			<div class="main__texts">
 				<div class="main-sub-texts">
-					Fullstack Web Developer <br>
+					Full Stack Developer <br>
 					2 Years of Working Experience <br>
 					Seeking to Learn, Solve & Explore
 				</div>
 				<div class="main__summary-texts">
 					Hey there &#128075; &#128512;, <br>
-					I'm a fullstack web developer who have worked with international team members & clients to achieve successful results.<br>
+					I'm a full stack developer who have worked with international team members & clients to achieve successful results.<br>
 					Previously, I was a Mechanical Engineering graduate back in 2020 but have made a transition to this field and have been in it since 2021.<br>
 					I gained experience and learned rapidly with the help of <a class="main__snappymob" href="https://snappymob.com" target="_blank" rel="noopener noreferrer">snappymob</a>.<br>
 					My aim is to contribute my effort to any projects I'm involved in, to continue learning & work with great people along the way. 

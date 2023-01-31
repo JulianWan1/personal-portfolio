@@ -5,9 +5,9 @@
         Experience
       </div>
       <div class="experience__contents">
-        <p class="experience__texts">Delivered:<br> 
-          FrontEnd & Backend features / fixes in several projects<br>
-          Code & app functionality maintenance<br><br>
+        <p class="experience__texts">
+          Develop front-end & back-end for both new & existing client apps<br>
+          Maintained code & quickly fix bugs when detected<br><br>
         </p>
         <div class="experience__tech-stack-header">
           Tech stack:
