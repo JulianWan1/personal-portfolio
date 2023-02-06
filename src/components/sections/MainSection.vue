@@ -81,7 +81,7 @@ window.addEventListener('scroll', function() {
 
 	&__summary-texts{
 		@include mainSummaryTextsReactive();
-		width: calc(22vh + 22vw);
+		width: calc(20vh + 20vw);
 		font-size: calc(0.6vh + 0.6vw);
 		margin-top: 4vh;
 		line-height: calc(35px);
