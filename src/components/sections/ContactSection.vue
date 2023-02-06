@@ -106,7 +106,8 @@ export default class ContactSection extends Vue{
 
   &__icon-desc{
     text-align: center;
-    font-size: calc(1vh + 1vw);;
+    font-size: calc(1vh + 1vw);
+    word-break: break-all;
   }
 
 }

@@ -1,8 +1,8 @@
 // Mixins for ProjectsSection
 // Contains all of the media queries for all classes involved
 @mixin projectSectionContainerReactive{
-	@media(max-height: 650px){
-		height: 60vw;
+	@media(max-height: 600px){
+		height: 100%;
 	}
 }
 
@@ -23,15 +23,17 @@
 	}
 
 	@media(max-height: 650px) and (max-width: 650px) {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		margin-top: 50px;
-		margin-bottom: 100px;
-		padding: 2vh;
-		height: 100%;
-		text-align: center;
+    height: 100%;
 	}
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	padding: 2vh;
+	height: 100%;
+	text-align: center;
 
 }
 
