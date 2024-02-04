@@ -38,7 +38,11 @@ export default class ExperienceSection extends Vue{
       image:`typescript`
     },
     {
-      name: 'Vue',
+      name: 'ReactJs',
+      image:`reactjs`
+    },
+    {
+      name: 'VueJs',
       image:`vuejs`
     },
     {
