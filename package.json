@@ -10,6 +10,7 @@
   "dependencies": {
     "buefy": "^0.9.8",
     "core-js": "^3.6.5",
+    "dayjs": "^1.11.10",
     "dotenv": "^16.0.3",
     "node-sass": "^8.0.0",
     "sass": "^1.56.1",
