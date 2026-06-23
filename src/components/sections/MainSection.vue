@@ -6,18 +6,18 @@
       </div>
       <div class="main__texts">
         <div class="main__sub-texts">
-          Full Stack Web Developer <br />
+          Full-Stack & Cloud Engineer <br />
           {{ this.yearsOfExperience() }} Years of Working Experience <br />
         </div>
         <div class="main__summary-texts">
-          Hey there &#128075; &#128512;, <br />
-          I'm a full stack developer who have worked with international team
-          members & clients to achieve successful results.<br />
-          Graduated in Mechanical Engineering back in 2020 but transitioned to
-          this field and have been in it since 2021.<br />
-          <!-- Gained experience and learned rapidly with the help of <a class="main__snappymob" href="https://snappymob.com" target="_blank" rel="noopener noreferrer">snappymob</a>.<br> -->
-          My aim is to contribute my effort to any projects I'm involved in, to
-          continue learning & work with great people along the way.
+          I enjoy turning complex systems into clear value for both technical
+          and non-technical audiences &mdash;
+          now moving into more customer-facing, solutions-focused engineering.<br />
+          I work across TypeScript/React, Java/Spring Boot, and AWS, from building
+          end-to-end AI agents to migrating enterprise services from on-premises
+          to the cloud.<br />
+          AWS Certified Solutions Architect &ndash; Associate. Always keen to
+          learn, solve real problems, and work with great people along the way.
         </div>
       </div>
     </div>
