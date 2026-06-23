@@ -39,11 +39,15 @@ import ContactSection from './sections/ContactSection.vue';
 })
 export default class MainPage extends Vue {
 
-  // Set to ensure that the page stops slightly more above (using -40 offset) when redirecting
+  // Set to ensure that the page stops slightly more above (using -40 offset by default) when redirecting.
   redirectToSection(page:string){
 
     const id = page;
-    const yOffset = -40; 
+    const sectionOffsets: { [key: string]: number } = {
+      'project-section': -30,
+      'contact-section': 40,
+    };
+    const yOffset = sectionOffsets[id] ?? -40;
     const pageSection = document.getElementById(id);
     const y = pageSection!.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
