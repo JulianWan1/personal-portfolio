@@ -20,8 +20,8 @@
 	flex-direction:column ;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 35vh;
-	width: 20vw;
+	height: 30vh;
+	width: 18vw;
 	margin: 10px;
 	padding: 2vh;
 	border-radius: 5vh;
@@ -37,13 +37,13 @@
 
 @mixin contactIconImageReactive{
 	align-self: center;
-	height: 15vh;
-	width: 15vh;
+	height: 11vh;
+	width: 11vh;
 	padding:10px;
 	border-radius: 10px;
 	@media(max-width:850px){
-		height: 12vh;
-		width: 12vh;
+		height: 10vh;
+		width: 10vh;
 	}
 
 }

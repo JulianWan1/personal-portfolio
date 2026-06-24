@@ -9,16 +9,17 @@
           Let's get connected!
         </div>
         <div class="contact__links-container">
-          <div class="contact__icon-card" v-for="contact of contacts" :key="contact.image">
-            <a :href="contact.link" target="_blank" rel="noopener noreferrer">
-              <img class="contact__icon-image" :src="require(`../../assets/${contact.image}.png`)" alt="contact-icon">
-            </a>
+          <a
+            class="contact__icon-card"
+            v-for="contact of contacts"
+            :key="contact.image"
+            :href="contact.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="contact__icon-image" :src="require(`../../assets/${contact.image}.png`)" alt="contact-icon">
             <div class="contact__icon-desc">{{contact.description}}</div>
-          </div>
-          <div class="contact__icon-card-discord">
-            <img class="contact__icon-image-discord" :src="require(`../../assets/discord.png`)" alt="contact-icon">
-            <div class="contact__icon-desc">{{discordUsername}}</div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -27,7 +28,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { GMAIL_ADDRESS, LINKEDIN_URL, DISCORD_USERNAME } from '../../config/.env.config'
+import { GMAIL_ADDRESS, LINKEDIN_URL } from '../../config/.env.config'
 import { Contacts } from '../../models/contact.model'
 
 @Component({})
@@ -37,18 +38,19 @@ export default class ContactSection extends Vue{
     {
       image:`gmail`,
       link:`mailto:${GMAIL_ADDRESS}`,
-      linkExists: true,
       description: 'Gmail'
     },
     {
       image:`linkedin`,
       link:`${LINKEDIN_URL}`,
-      linkExists: true,
       description: 'LinkedIn'
     },
+    {
+      image:`github`,
+      link:`https://github.com/JulianWan1`,
+      description: 'GitHub'
+    },
   ]
-
-  discordUsername = DISCORD_USERNAME;
 
 }
 </script>
@@ -60,10 +62,13 @@ export default class ContactSection extends Vue{
   &__section-container{
     @include sectionContainerDefault();
     @include contactSectionContainerReactive();
+    display: flex;
+    flex-direction: column;
   }
 
   &__text-container{
     @include textContainerDefault();
+    flex: 1;
   }
 
   &__header{
@@ -73,6 +78,9 @@ export default class ContactSection extends Vue{
   &__texts{
     font-size: calc(1.5vh + 1.5vw);
     margin-top: 2vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   &__links-container{
@@ -80,27 +88,23 @@ export default class ContactSection extends Vue{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10vh;
+    margin: auto 0;
     padding-right: 6vw;
   }
 
   &__icon-card{
     @include contactIconCardReactive();
-  }
-
-  &__icon-image{
-    @include contactIconImageReactive();
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform $transition-time-links, background-color $transition-time-links;
     &:hover{
-      opacity: 0.5;
-      transition: opacity $transition-time-links;
+      transform: scale(1.05);
+      background-color: rgba(70, 70, 70, 0.4);
     }
   }
 
-  &__icon-card-discord{
-    @include contactIconCardReactive();
-  }
-
-  &__icon-image-discord{
+  &__icon-image{
     @include contactIconImageReactive();
   }
 
