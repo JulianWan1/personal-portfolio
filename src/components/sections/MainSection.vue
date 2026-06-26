@@ -93,6 +93,15 @@ window.addEventListener("scroll", function() {
     height: auto;
     width: calc(18vw + 16vh);
     margin-bottom: 10vh;
+    @media(max-width: 1024px){
+      margin-bottom: 0;
+    }
+    // Landscape phones: the section is short (<=450px tall), so cap the image
+    // height to stop it overflowing the bottom & bleeding into the next section
+    @media(max-width: 1024px) and (max-height: 450px){
+      width: auto;
+      max-height: 70vh;
+    }
   }
 
   &__summary-texts {

@@ -44,7 +44,7 @@ export default class MainPage extends Vue {
 
     const id = page;
     const sectionOffsets: { [key: string]: number } = {
-      'project-section': -30,
+      'project-section': 0,
       'contact-section': 40,
     };
     const yOffset = sectionOffsets[id] ?? -40;

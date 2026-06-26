@@ -93,6 +93,11 @@ export default class ExperienceSection extends Vue {
   &__section-container {
     @include sectionContainerDefault();
     @include experienceSectionContainerReactive();
+    @media(max-width: 1024px){
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   &__text-container {

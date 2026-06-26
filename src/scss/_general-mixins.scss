@@ -2,6 +2,10 @@
 @mixin sectionContainerDefault(){
 	height: 100vh;
 	background-color: $background-color;
+	@media(max-width: 1024px){
+		height: auto;
+		min-height: 100vh;
+	}
 }
 
 // 2. General Text Container Mixin

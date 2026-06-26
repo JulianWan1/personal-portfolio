@@ -1,0 +1,12 @@
+// Global base styles — imported once in main.ts (not via additionalData, which
+// would duplicate these rules into every component's compiled CSS).
+// Safety net: keep images bounded and prevent any horizontal scroll.
+
+img {
+  max-width: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
